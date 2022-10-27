@@ -16,7 +16,7 @@ public class PersonViewTable {
     PersonService personService;
 
     @GetMapping("/tabla")
-    public String viewTable(final Model model){
+    public String viewTable(final Model model) {
 
         final Flux<Person> personList = personService.allPerson();
         model.addAttribute("personlist", personList);
