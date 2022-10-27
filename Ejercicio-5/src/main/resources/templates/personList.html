@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de personas</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-escale=1" name="viewport">
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="person : ${personlist}">
+        <td><span th:text="${person.nombre}"></span></td>
+        <td><span th:text="${person.apellido}"></span></td>
+        <td><span th:text="${person.edad}"></span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
