@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @SpringBootApplication
 public class Ejercicio1Application implements CommandLineRunner {
@@ -23,7 +23,32 @@ public class Ejercicio1Application implements CommandLineRunner {
 
 		//EJERCICIO 1, MOSTRAR CUANTOS NÚMEROS SON MAYORES DE 10 (IMPERATIVA)
 
+		AtomicInteger count = new AtomicInteger();
+		numbers.forEach(n->{
+			if(n>10){
+				count.getAndIncrement();
+			}
+		});
 
+		System.out.println(count);
+
+		//OTRA FORMA MÁS TRADICIONAL
+		int count1=0;
+		for(Integer x : numbers){
+			if(x>10){
+				count1++;
+			}
+		}
+		System.out.println(count1);
+
+		//OTRA FORMA AÚN MÁS VIEJA
+		int count2 = 0;
+		for (int i = 0; i <numbers.size(); i++) {
+			if(numbers.get(i)>10){
+				count2++;
+			}
+		}
+		System.out.println(count2);
 	}
 
 }
